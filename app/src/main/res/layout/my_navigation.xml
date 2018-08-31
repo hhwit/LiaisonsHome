@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hhwit.liaisonshome.NavigationIconView
+            android:id="@+id/navigationIconView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:liaisonsColor1="@color/colorNavigationIconNormal"
+            app:liaisonsColor2="@color/colorNavigationIconPress"
+            app:liaisonsDrawable1="@drawable/ic_talks_blank_24dp"
+            app:liaisonsDrawable2="@drawable/ic_talks_full_24dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/navigation_discover" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hhwit.liaisonshome.NavigationIconView
+            android:id="@+id/navigationIconView2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:liaisonsColor1="@color/colorNavigationIconNormal"
+            app:liaisonsColor2="@color/colorNavigationIconPress"
+            app:liaisonsDrawable1="@drawable/ic_talks_blank_24dp"
+            app:liaisonsDrawable2="@drawable/ic_talks_full_24dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/navigation_contacts" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hhwit.liaisonshome.NavigationIconView
+            android:id="@+id/navigationIconView3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:liaisonsColor1="@color/colorNavigationIconNormal"
+            app:liaisonsColor2="@color/colorNavigationIconPress"
+            app:liaisonsDrawable1="@drawable/ic_talks_blank_24dp"
+            app:liaisonsDrawable2="@drawable/ic_talks_full_24dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/navigation_talks" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hhwit.liaisonshome.NavigationIconView
+            android:id="@+id/navigationIconView4"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:liaisonsColor1="@color/colorNavigationIconNormal"
+            app:liaisonsColor2="@color/colorNavigationIconPress"
+            app:liaisonsDrawable1="@drawable/ic_talks_blank_24dp"
+            app:liaisonsDrawable2="@drawable/ic_talks_full_24dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/navigation_me" />
+    </LinearLayout>
+</LinearLayout>

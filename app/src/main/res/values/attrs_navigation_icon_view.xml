@@ -1,0 +1,10 @@
+<resources>
+    <declare-styleable name="NavigationIconView">
+        <attr name="liaisonsColor1" format="color" />
+        <attr name="liaisonsColor2" format="color" />
+        <attr name="liaisonsDrawable1" format="color|reference" />
+        <attr name="liaisonsDrawable2" format="color|reference" />
+        <attr name="liaisonsString" format="string" />
+        <attr name="liaisonsDimension" format="dimension" />
+    </declare-styleable>
+</resources>
