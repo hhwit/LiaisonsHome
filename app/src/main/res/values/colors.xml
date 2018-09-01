@@ -6,6 +6,6 @@
     <color name="colorActionBar">#282828</color>
     <color name="colorActionBarText">#ffffff</color>
     <color name="colorNavigationBar">#ffffff</color>
-    <color name="colorNavigationIconNormal">#484848</color>
+    <color name="colorNavigationIconNormal">#7e7e7e</color>
     <color name="colorNavigationIconPress">#294196</color>
 </resources>

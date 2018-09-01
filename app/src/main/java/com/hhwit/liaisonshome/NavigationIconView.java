@@ -11,9 +11,12 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class NavigationIconView extends View {
+
+    private OnClickListener mListener;
     private int mLiaisonsColor1 = Color.GRAY;
     private int mLiaisonsColor2 = Color.BLUE;
     private Drawable mLiaisonsDrawable1;
@@ -55,6 +58,8 @@ public class NavigationIconView extends View {
         mLiaisonsColor2 = a.getColor(
                 R.styleable.NavigationIconView_liaisonsColor2,
                 mLiaisonsColor2);
+
+        currentColor = mLiaisonsColor1;
 
         if (a.hasValue(R.styleable.NavigationIconView_liaisonsDrawable1)) {
             mLiaisonsDrawable1 = a.getDrawable(
@@ -101,12 +106,9 @@ public class NavigationIconView extends View {
         int totalWidth = getWidth();
         int totalHeight = getHeight();
 
-        int paddingLeft = getPaddingLeft();
         int paddingTop = getPaddingTop();
-        int paddingRight = getPaddingRight();
         int paddingBottom = getPaddingBottom();
 
-        int contentWidth = totalWidth - paddingLeft - paddingRight;
         int contentHeight = totalHeight - paddingTop - paddingBottom;
         int imageWidth = contentHeight * 3 / 5;
         int textHeight = contentHeight - imageWidth;
@@ -114,7 +116,7 @@ public class NavigationIconView extends View {
         mTextPaint.setColor(currentColor);
         canvas.drawText(mLiaisonsString,
                 (totalWidth - mTextWidth) / 2,
-                paddingTop + imageWidth + (textHeight - mTextHeight) / 2,
+                paddingTop + imageWidth + (textHeight + mTextHeight) / 2,
                 mTextPaint);
 
         if (currentDrawable != null) {
@@ -128,10 +130,32 @@ public class NavigationIconView extends View {
             @SuppressLint("DrawAllocation") Paint paint = new Paint();
             paint.setColor(Color.RED);
             paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle((totalWidth + imageWidth) / 2  + imageWidth - imageWidth * 7 / 8,
-                    paddingTop + imageWidth / 8,
+            canvas.drawCircle((totalWidth + imageWidth) / 2  + imageWidth - imageWidth * 6 / 8,
+                    paddingTop + imageWidth * 2 / 8,
                     imageWidth / 8, paint);
         }
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int action = event.getAction();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_UP:
+                    if (mListener != null)
+                        mListener.onClick(this);
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public void setOnClickListener(OnClickListener l) {
+        mListener = l;
     }
 
     public void setFirstColor() {
