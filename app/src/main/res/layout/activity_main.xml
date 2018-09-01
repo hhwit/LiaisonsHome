@@ -5,17 +5,46 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorActionBar"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"
+            android:text="@string/app_name"
+            android:textColor="@color/colorActionBarText"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:src="@color/colorNavigationIconNormal"
+        app:layout_constraintBottom_toTopOf="@+id/main_navigation"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent" />
 
     <android.support.v7.widget.GridLayout
         android:id="@+id/main_navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@color/colorNavigationBar"
+        app:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:columnCount="4"
         app:rowCount="1">
 
         <com.hhwit.liaisonshome.NavigationIconView
