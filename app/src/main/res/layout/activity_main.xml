@@ -5,12 +5,20 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/main_fragment"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/navigation_height"
+        android:paddingTop="@dimen/actionbar_height">
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/main_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_height"
         android:background="@color/colorActionBar"
         android:orientation="horizontal"
         app:layout_constraintLeft_toRightOf="parent"
@@ -39,7 +47,7 @@
     <android.support.v7.widget.GridLayout
         android:id="@+id/main_navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="@dimen/navigation_height"
         android:background="@color/colorNavigationBar"
         app:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
