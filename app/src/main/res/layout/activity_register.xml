@@ -19,9 +19,9 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:padding="12dp"
-            app:buttonColor1="@color/colorPrimary"
-            app:buttonColor2="@color/colorNavigationIconNormal"
-            app:buttonDrawable="@drawable/ic_close_black_24dp" />
+            app:buttonContentNormal="@android:color/black"
+            app:buttonContentPressed="@color/colorPrimaryDark"
+            app:buttonImage="@drawable/ic_close_black_24dp" />
     </LinearLayout>
 
     <ScrollView
@@ -77,9 +77,10 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_alignParentRight="true"
-                        app:buttonColor1="@color/colorPrimary"
-                        app:buttonColor2="@color/colorNavigationIconNormal"
-                        app:buttonDrawable="@drawable/ic_close_black_24dp" />
+                        app:buttonContentDisabled="@color/colorPrimary"
+                        app:buttonContentNormal="@color/colorNavigationIconNormal"
+                        app:buttonContentPressed="@color/colorNavigationIconNormal"
+                        app:buttonImage="@drawable/ic_close_black_24dp" />
 
                 </RelativeLayout>
 
@@ -119,9 +120,10 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_alignParentRight="true"
-                        app:buttonColor1="@color/colorPrimary"
-                        app:buttonColor2="@color/colorNavigationIconNormal"
-                        app:buttonDrawable="@drawable/ic_close_black_24dp" />
+                        app:buttonContentDisabled="@color/colorPrimary"
+                        app:buttonContentNormal="@color/colorNavigationIconNormal"
+                        app:buttonContentPressed="@color/colorNavigationIconNormal"
+                        app:buttonImage="@drawable/ic_close_black_24dp" />
 
                 </RelativeLayout>
 
@@ -161,9 +163,10 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_alignParentRight="true"
-                        app:buttonColor1="@color/colorPrimary"
-                        app:buttonColor2="@color/colorNavigationIconNormal"
-                        app:buttonDrawable="@drawable/ic_close_black_24dp" />
+                        app:buttonContentDisabled="@color/colorPrimary"
+                        app:buttonContentNormal="@color/colorNavigationIconNormal"
+                        app:buttonContentPressed="@color/colorNavigationIconNormal"
+                        app:buttonImage="@drawable/ic_close_black_24dp" />
 
                 </RelativeLayout>
 
@@ -176,16 +179,19 @@
                     android:background="@color/colorPrimaryDark"></View>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/signup_button"
-                style="@style/Widget.AppCompat.Button"
+            <com.hhwit.liaisonshome.MyButtonView
+                android:id="@+id/sign_up_button"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="20dp"
-                android:background="@color/colorPrimaryDark"
-                android:text="@string/register_signup"
-                android:textColor="@color/colorPrimary"
-                android:textSize="18sp" />
+                app:buttonBackgroundDisabled="@color/colorButtonDisable"
+                app:buttonBackgroundNormal="@color/colorButtonNormal"
+                app:buttonBackgroundPressed="@color/colorButtonPress"
+                app:buttonContentDisabled="@color/colorPrimary"
+                app:buttonContentNormal="@color/colorPrimary"
+                app:buttonContentPressed="@android:color/darker_gray"
+                app:buttonText="@string/register_signup"
+                app:buttonTextSize="18sp" />
 
         </LinearLayout>
     </ScrollView>

@@ -1,7 +1,13 @@
 <resources>
     <declare-styleable name="MyButtonView">
-        <attr name="buttonColor1" format="color" />
-        <attr name="buttonColor2" format="color" />
-        <attr name="buttonDrawable" format="color|reference" />
+        <attr name="buttonBackgroundNormal" format="color" />
+        <attr name="buttonBackgroundPressed" format="color" />
+        <attr name="buttonBackgroundDisabled" format="color" />
+        <attr name="buttonContentNormal" format="color" />
+        <attr name="buttonContentPressed" format="color" />
+        <attr name="buttonContentDisabled" format="color" />
+        <attr name="buttonText" format="string" />
+        <attr name="buttonTextSize" format="dimension" />
+        <attr name="buttonImage" format="color|reference" />
     </declare-styleable>
 </resources>
