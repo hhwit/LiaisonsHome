@@ -80,7 +80,7 @@
                         app:buttonContentDisabled="@color/colorPrimary"
                         app:buttonContentNormal="@color/colorNavigationIconNormal"
                         app:buttonContentPressed="@color/colorNavigationIconNormal"
-                        app:buttonImage="@drawable/ic_close_black_24dp" />
+                        app:buttonImage="@drawable/ic_close_gray1_24dp" />
 
                 </RelativeLayout>
 
@@ -123,7 +123,7 @@
                         app:buttonContentDisabled="@color/colorPrimary"
                         app:buttonContentNormal="@color/colorNavigationIconNormal"
                         app:buttonContentPressed="@color/colorNavigationIconNormal"
-                        app:buttonImage="@drawable/ic_close_black_24dp" />
+                        app:buttonImage="@drawable/ic_close_gray2_24dp" />
 
                 </RelativeLayout>
 
@@ -166,7 +166,7 @@
                         app:buttonContentDisabled="@color/colorPrimary"
                         app:buttonContentNormal="@color/colorNavigationIconNormal"
                         app:buttonContentPressed="@color/colorNavigationIconNormal"
-                        app:buttonImage="@drawable/ic_close_black_24dp" />
+                        app:buttonImage="@drawable/ic_close_gray3_24dp" />
 
                 </RelativeLayout>
 

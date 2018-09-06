@@ -123,7 +123,7 @@ public class MyButtonView extends View {
 
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -168,7 +168,7 @@ public class MyButtonView extends View {
                 mCurrentContentColor = mContentPressedColor;
                 invalidate();
                 break;
-            case MotionEvent.ACTION_MOVE:
+            case MotionEvent.ACTION_CANCEL:
                 mCurrentBackgroundColor = mBackgroundNormalColor;
                 mCurrentContentColor = mContentNormalColor;
                 invalidate();
