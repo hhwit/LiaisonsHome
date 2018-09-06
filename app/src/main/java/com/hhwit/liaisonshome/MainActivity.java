@@ -1,5 +1,6 @@
 package com.hhwit.liaisonshome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -92,6 +93,9 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View v) {
                 showNavigationIcon((NavigationIconView)v);
                 showFragment(mMeFragment);
+
+                startActivity(new Intent(MainActivity.this,
+                        RegisterActivity.class));
             }
         });
 
