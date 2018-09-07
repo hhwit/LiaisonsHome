@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".RegisterActivity"
+    tools:context=".LoginActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="50dp"
-                    android:text="@string/register_title"
+                    android:text="@string/login_title"
                     android:textColor="@color/colorActionBar"
                     android:textSize="25sp" />
 
@@ -58,7 +58,7 @@
                         android:layout_width="95dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="@string/register_email"
+                        android:text="@string/login_account"
                         android:textColor="@color/colorActionBar"
                         android:textSize="16sp" />
 
@@ -141,51 +141,6 @@
                     app:buttonBackgroundNormal="@color/colorButtonNormal"
                     app:buttonBackgroundPressed="@color/colorButtonNormal" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/password2_text"
-                        android:layout_width="95dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="@string/register_password2"
-                        android:textColor="@color/colorActionBar"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/register_password2_edit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/password2_text"
-                        android:background="@null"
-                        android:ems="9"
-                        android:hint="@string/register_password2_hint"
-                        android:inputType="textPassword"
-                        android:textColor="@color/colorActionBar" />
-
-                    <com.hhwit.liaisonshome.MyButtonView
-                        android:id="@+id/register_password2_button"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_alignParentRight="true"
-                        app:buttonContentDisabled="@color/colorPrimary"
-                        app:buttonContentNormal="@color/colorNavigationIconNormal"
-                        app:buttonContentPressed="@color/colorNavigationIconNormal"
-                        app:buttonImage="@drawable/ic_close_gray3_24dp" />
-
-                </RelativeLayout>
-
-                <com.hhwit.liaisonshome.MyButtonView
-                    android:id="@+id/register_password2_line"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="10dp"
-                    app:buttonBackgroundDisabled="@color/colorNavigationIconNormal"
-                    app:buttonBackgroundNormal="@color/colorButtonNormal"
-                    app:buttonBackgroundPressed="@color/colorButtonNormal" />
             </LinearLayout>
 
             <com.hhwit.liaisonshome.MyButtonView
@@ -199,8 +154,26 @@
                 app:buttonContentDisabled="@color/colorPrimary"
                 app:buttonContentNormal="@color/colorPrimary"
                 app:buttonContentPressed="@android:color/darker_gray"
-                app:buttonText="@string/register_sign_up"
+                app:buttonText="@string/login_button_text"
                 app:buttonTextSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/login_to_register"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:text="@string/login_to_register"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

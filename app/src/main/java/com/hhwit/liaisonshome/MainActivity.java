@@ -95,7 +95,7 @@ public class MainActivity extends FragmentActivity {
                 showFragment(mMeFragment);
 
                 startActivity(new Intent(MainActivity.this,
-                        RegisterActivity.class));
+                        LoginActivity.class));
             }
         });
 
