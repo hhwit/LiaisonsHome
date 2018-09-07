@@ -13,15 +13,15 @@ public class RegisterActivity extends Activity {
 
     private EditText mEmailText;
     private MyButtonView mEmailButton;
-    private View mEmailLine;
+    private MyButtonView mEmailLine;
 
     private EditText mPasswordText;
     private MyButtonView mPasswordButton;
-    private View mPasswordLine;
+    private MyButtonView mPasswordLine;
 
     private EditText mConfirmText;
     private MyButtonView mConfirmButton;
-    private View mConfirmLine;
+    private MyButtonView mConfirmLine;
 
     private MyButtonView mSignUpButton;
 
@@ -56,9 +56,13 @@ public class RegisterActivity extends Activity {
         mPasswordButton.setDisable();
         mConfirmButton.setDisable();
 
+        mPasswordLine.setDisable();
+        mConfirmLine.setDisable();
+
     }
 
     private void initActions() {
+        // Close button
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,13 +70,14 @@ public class RegisterActivity extends Activity {
             }
         });
 
+        // Email text
         mEmailText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {
                 if (b) {
-                    disableLine(mEmailLine);
-                } else {
                     enableLine(mEmailLine);
+                } else {
+                    disableLine(mEmailLine);
                 }
             }
         });
@@ -85,7 +90,11 @@ public class RegisterActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                mEmailButton.setEnable();
+                if (mEmailText.getText().toString().isEmpty()) {
+                    mEmailButton.setDisable();
+                } else {
+                    mEmailButton.setEnable();
+                }
             }
 
             @Override
@@ -102,18 +111,105 @@ public class RegisterActivity extends Activity {
             }
         });
 
+        // Password Text
+        mPasswordText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    enableLine(mPasswordLine);
+                } else {
+                    disableLine(mPasswordLine);
+                }
+            }
+        });
+
+        mPasswordText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (mPasswordText.getText().toString().isEmpty()) {
+                    mPasswordButton.setDisable();
+                } else {
+                    mPasswordButton.setEnable();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        mPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mPasswordText.setText("");
+                mPasswordButton.setDisable();
+            }
+        });
+
+        // Confirm Text
+        mConfirmText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    enableLine(mConfirmLine);
+                } else {
+                    disableLine(mConfirmLine);
+                }
+            }
+        });
+
+        mConfirmText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (mConfirmText.getText().toString().isEmpty()) {
+                    mConfirmButton.setDisable();
+                } else {
+                    mConfirmButton.setEnable();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+        });
+
+        mConfirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mConfirmText.setText("");
+                mConfirmButton.setDisable();
+            }
+        });
+
+        // Sign up button
+        mSignUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                finish();
+            }
+        });
+
     }
 
-    @SuppressLint("ResourceAsColor")
     private void disableLine(View v) {
-        v.setBackgroundColor(R.color.colorLiaisonGray);
-        v.invalidate();
+        ((MyButtonView)v).setDisable();
     }
 
-    @SuppressLint("ResourceAsColor")
     private void enableLine(View v) {
-        v.setBackgroundColor(R.color.colorPrimaryDark);
-        v.invalidate();
+        ((MyButtonView)v).setEnable();
     }
 
 }

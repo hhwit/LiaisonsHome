@@ -57,9 +57,10 @@
                         android:id="@+id/email_text"
                         android:layout_width="95dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
                         android:text="@string/register_email"
                         android:textColor="@color/colorActionBar"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/register_email_edit"
@@ -67,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/email_text"
                         android:background="@null"
-                        android:ems="11"
+                        android:ems="9"
                         android:hint="@string/register_email_hint"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/colorActionBar" />
@@ -84,13 +85,15 @@
 
                 </RelativeLayout>
 
-                <View
+                <com.hhwit.liaisonshome.MyButtonView
                     android:id="@+id/register_email_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/colorLiaisonGray"></View>
+                    app:buttonBackgroundDisabled="@color/colorNavigationIconNormal"
+                    app:buttonBackgroundNormal="@color/colorButtonNormal"
+                    app:buttonBackgroundPressed="@color/colorButtonNormal" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -100,9 +103,10 @@
                         android:id="@+id/password1_text"
                         android:layout_width="95dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
                         android:text="@string/register_password1"
                         android:textColor="@color/colorActionBar"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/register_password1_edit"
@@ -110,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/password1_text"
                         android:background="@null"
-                        android:ems="11"
+                        android:ems="9"
                         android:hint="@string/register_password1_hint"
                         android:inputType="textPassword"
                         android:textColor="@color/colorActionBar" />
@@ -127,13 +131,15 @@
 
                 </RelativeLayout>
 
-                <View
+                <com.hhwit.liaisonshome.MyButtonView
                     android:id="@+id/register_password1_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/colorLiaisonGray"></View>
+                    app:buttonBackgroundDisabled="@color/colorNavigationIconNormal"
+                    app:buttonBackgroundNormal="@color/colorButtonNormal"
+                    app:buttonBackgroundPressed="@color/colorButtonNormal" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -143,9 +149,10 @@
                         android:id="@+id/password2_text"
                         android:layout_width="95dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
                         android:text="@string/register_password2"
                         android:textColor="@color/colorActionBar"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/register_password2_edit"
@@ -153,7 +160,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/password2_text"
                         android:background="@null"
-                        android:ems="11"
+                        android:ems="9"
                         android:hint="@string/register_password2_hint"
                         android:inputType="textPassword"
                         android:textColor="@color/colorActionBar" />
@@ -170,13 +177,15 @@
 
                 </RelativeLayout>
 
-                <View
+                <com.hhwit.liaisonshome.MyButtonView
                     android:id="@+id/register_password2_line"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/colorLiaisonGray"></View>
+                    app:buttonBackgroundDisabled="@color/colorNavigationIconNormal"
+                    app:buttonBackgroundNormal="@color/colorButtonNormal"
+                    app:buttonBackgroundPressed="@color/colorButtonNormal" />
             </LinearLayout>
 
             <com.hhwit.liaisonshome.MyButtonView
