@@ -19,12 +19,14 @@
 
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/title_activity_register" >
+            android:label="@string/title_activity_register"
+            android:windowSoftInputMode="stateHidden">
         </activity>
 
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_register" >
+            android:label="@string/title_activity_register"
+            android:windowSoftInputMode="stateHidden">
         </activity>
 
     </application>
