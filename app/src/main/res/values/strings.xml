@@ -24,5 +24,10 @@
     <string name="login_button_text2">Sign In</string>
     <string name="login_to_register"><u>no account?</u></string>
 
+    <string name="me_identity_tile">My identity</string>
+    <string name="me_identity_date">Used since</string>
+
+
+
 
 </resources>
