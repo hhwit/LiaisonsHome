@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
+        android:id="@+id/me_un_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="me" />
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
 
+        <com.hhwit.liaisonshome.MyButtonView
+            android:id="@+id/me_un_login_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            app:buttonBackgroundDisabled="@color/colorButtonDisable"
+            app:buttonBackgroundNormal="@color/colorButtonNormal"
+            app:buttonBackgroundPressed="@color/colorButtonPress"
+            app:buttonText="@string/login_button_text2"
+            app:buttonTextSize="18sp" />
+
+        <com.hhwit.liaisonshome.MyButtonView
+            android:id="@+id/me_un_login_sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="30dp"
+            app:buttonBackgroundDisabled="@color/colorButton2Disable"
+            app:buttonBackgroundNormal="@color/colorButton2Normal"
+            app:buttonBackgroundPressed="@color/colorButton2Press"
+            app:buttonText="@string/register_sign_up"
+            app:buttonTextSize="18sp" />
+    </LinearLayout>
 </FrameLayout>

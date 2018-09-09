@@ -93,9 +93,6 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View v) {
                 showNavigationIcon((NavigationIconView)v);
                 showFragment(mMeFragment);
-
-                startActivity(new Intent(MainActivity.this,
-                        LoginActivity.class));
             }
         });
 

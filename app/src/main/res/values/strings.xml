@@ -21,6 +21,7 @@
     <string name="login_title">Login via Email address</string>
     <string name="login_account">Account</string>
     <string name="login_button_text">Login</string>
+    <string name="login_button_text2">Sign In</string>
     <string name="login_to_register"><u>no account?</u></string>
 
 

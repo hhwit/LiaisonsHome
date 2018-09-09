@@ -2,6 +2,8 @@
 <resources>
     <color name="colorPrimary">#fefeff</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryGray">#c6c6c6</color>
+
 
     <color name="colorAccent">#FF4081</color>
     <color name="colorActionBar">#282828</color>
@@ -14,6 +16,9 @@
     <color name="colorButtonPress">#516cca</color>
     <color name="colorButtonNormal">#294196</color>
     <color name="colorButtonDisable">#516cca</color>
+    <color name="colorButton2Press">#c63c3f</color>
+    <color name="colorButton2Normal">#f50004</color>
+    <color name="colorButton2Disable">#c63c3f</color>
 
     <color name="colorLiaisonGray">#7e7e7e</color>
 
