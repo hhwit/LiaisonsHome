@@ -26,7 +26,11 @@
 
     <string name="me_identity_tile">My identity</string>
     <string name="me_identity_date">Used since</string>
-
+    <string name="me_privacy_text">Privacy</string>
+    <string name="me_privacy_choice_public">Public</string>
+    <string name="me_privacy_choice_private">Private</string>
+    <string name="me_privacy_choice_forbidden">Forbidden</string>
+    <string name="me_settings_text">Settings</string>
 
 
 
