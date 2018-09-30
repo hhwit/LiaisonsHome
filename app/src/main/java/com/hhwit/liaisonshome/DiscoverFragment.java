@@ -41,6 +41,7 @@ public class DiscoverFragment extends Fragment {
 
         mListView = getView().findViewById(R.id.fragment_discover_view);
         mSwipe = getView().findViewById(R.id.fragment_discover_swipe);
+        mSwipe.setColorSchemeResources(R.color.colorPrimaryDark);
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -54,6 +55,17 @@ public class DiscoverFragment extends Fragment {
         }
         mAdapter.addData(mList);
 
+        initActions();
+
+    }
+
+    private void initActions() {
+        mSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mSwipe.setRefreshing(false);
+            }
+        });
     }
 
 }

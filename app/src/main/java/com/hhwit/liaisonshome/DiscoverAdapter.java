@@ -47,14 +47,14 @@ public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
         int type = getItemViewType(position);
         if (type == TYPE_FOOTER) {
             ((DiscoverViewHolder)holder).footerText.setText("footer");
             return;
         }
 
-        DiscoverBean bean = mList.get(position);
+        final DiscoverBean bean = mList.get(position);
         if (position > 10) {
             ((DiscoverViewHolder) holder).description.setText(bean.getDescription());
             ((DiscoverViewHolder) holder).description.setVisibility(View.VISIBLE);
@@ -66,7 +66,9 @@ public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ((DiscoverViewHolder) holder).description.setText("My identity");
+                ((DiscoverViewHolder) holder).description.setVisibility(View.VISIBLE);
+                notifyItemChanged(holder.getAdapterPosition());
             }
         });
 
