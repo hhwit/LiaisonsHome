@@ -32,6 +32,7 @@
     <string name="me_privacy_choice_forbidden">Forbidden</string>
     <string name="me_settings_text">Settings</string>
 
+    <string name="discover_footer_loading">Loading...</string>
 
 
 </resources>
