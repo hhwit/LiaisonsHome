@@ -13,8 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
         android:textColor="@color/colorActionBar"
-        android:textSize="18sp"
-        android:visibility="gone" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/item_discover_identity"

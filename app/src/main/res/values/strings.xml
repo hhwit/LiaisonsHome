@@ -33,6 +33,8 @@
     <string name="me_settings_text">Settings</string>
 
     <string name="discover_footer_loading">Loading...</string>
+    <string name="discover_footer_no_more">No more</string>
+    <string name="discover_footer_network_failed">Network failed</string>
 
 
 </resources>

@@ -3,7 +3,6 @@ package com.hhwit.liaisonshome;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,17 +17,22 @@ import java.util.List;
 
 public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public static final int FOOTER_STATE_GONE = 0;
+    public static final int FOOTER_STATE_LOADING = 1;
+    public static final int FOOTER_STATE_NO_CONTENTS = 2;
+    public static final int FOOTER_STATE_NETWORK_FAILED = 3;
+
     private static final int TYPE_CONTENT = 1;
     private static final int TYPE_FOOTER = 2;
 
-    private Context mContext;
     private LayoutInflater mInflater;
-    private boolean isLoading = false;
     private List<DiscoverBean> mList = new ArrayList<>();
+    private ListViewCallback<DiscoverBean> mListViewCallback;
+    private int mFooterState = FOOTER_STATE_GONE;
 
-    public DiscoverAdapter(Context context) {
-        mContext = context;
-        mInflater = LayoutInflater.from(mContext);
+
+    DiscoverAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
     }
 
     @NonNull
@@ -48,27 +52,51 @@ public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
-        int type = getItemViewType(position);
+        final int type = getItemViewType(position);
         if (type == TYPE_FOOTER) {
-            ((DiscoverViewHolder)holder).footerText.setText("footer");
+            switch (mFooterState) {
+                case FOOTER_STATE_LOADING:
+                    ((DiscoverViewHolder)holder).footerText.setText(R.string.discover_footer_loading);
+                    break;
+                case FOOTER_STATE_NO_CONTENTS:
+                    ((DiscoverViewHolder)holder).footerText.setText(R.string.discover_footer_no_more);
+                    break;
+                case FOOTER_STATE_NETWORK_FAILED:
+                    ((DiscoverViewHolder)holder).footerText.setText(R.string.discover_footer_network_failed);
+                    break;
+            }
+            return;
+        }
+
+        if (mList == null) {
             return;
         }
 
         final DiscoverBean bean = mList.get(position);
-        if (position > 10) {
+        if (bean.getDescription() != null) {
             ((DiscoverViewHolder) holder).description.setText(bean.getDescription());
             ((DiscoverViewHolder) holder).description.setVisibility(View.VISIBLE);
-        } else {
-            ((DiscoverViewHolder) holder).description.setVisibility(View.GONE);
         }
-        ((DiscoverViewHolder)holder).identity.setText(bean.getIdentity());
+        if (bean.getIdentity() != null) {
+            ((DiscoverViewHolder) holder).identity.setText(bean.getIdentity());
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((DiscoverViewHolder) holder).description.setText("My identity");
-                ((DiscoverViewHolder) holder).description.setVisibility(View.VISIBLE);
-                notifyItemChanged(holder.getAdapterPosition());
+                if (mListViewCallback != null) {
+                    mListViewCallback.OnItemClickListener(holder.getAdapterPosition(), bean, type);
+                }
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (mListViewCallback != null) {
+                    mListViewCallback.OnItemLongClickListener(holder.getAdapterPosition(), bean, type);
+                }
+                return true;
             }
         });
 
@@ -81,14 +109,23 @@ public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemCount() {
-        return isLoading? mList.size() + 1 : mList.size();
+        return mFooterState==FOOTER_STATE_GONE? mList.size() : mList.size() + 1;
+    }
+
+    public void setCallback(ListViewCallback<DiscoverBean> callback) {
+        mListViewCallback = callback;
+    }
+
+    public void setFooterState(int state) {
+        mFooterState = state;
+        notifyDataSetChanged();
     }
 
     public void addData(List<DiscoverBean> list) {
+        int size = mList.size();
         if (list != null && list.size() > 0) {
-            int pos = mList.size();
             mList.addAll(list);
-            notifyItemRangeInserted(pos, list.size());
+            notifyItemRangeInserted(size, mList.size());
             notifyDataSetChanged();
         }
     }
@@ -102,8 +139,10 @@ public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public void clearData() {
-        mList.clear();
-        notifyDataSetChanged();
+        if (mList != null) {
+            mList.clear();
+            notifyDataSetChanged();
+        }
     }
 
 }

@@ -10,7 +10,7 @@ public class DiscoverBean {
     private String identity;
     private String description;
 
-    public DiscoverBean(String identity, String description) {
+    DiscoverBean(String identity, String description) {
         this.identity = identity;
         this.description = description;
     }
