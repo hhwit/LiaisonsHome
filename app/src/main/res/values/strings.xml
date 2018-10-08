@@ -36,5 +36,9 @@
     <string name="discover_footer_no_more">No more</string>
     <string name="discover_footer_network_failed">Network failed</string>
 
+    <string name="contacts_public">Public</string>
+    <string name="contacts_private">Private</string>
+    <string name="contacts_i_found_him">I found him/her</string>
+    <string name="contacts_he_found_me">He/She found me</string>
 
 </resources>
