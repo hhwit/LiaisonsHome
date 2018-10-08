@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorLiaisonLightGray"
-    android:gravity="center"
+    android:gravity="center_vertical|center"
     android:orientation="horizontal"
     android:padding="10dp">
 
     <ProgressBar
-        style="@android:style/Widget.ProgressBar.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        style="@android:style/Widget.Holo.Light.ProgressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
 
     <TextView
         android:id="@+id/footer_text"

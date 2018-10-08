@@ -18,10 +18,11 @@ import java.util.List;
 
 import static java.lang.Thread.sleep;
 
-
 /**
- * A simple {@link Fragment} subclass.
+ * Created by Hongwen Huang on 2018/10/8
+ * Email: hhwit@126.com
  */
+
 public class DiscoverFragment extends Fragment {
     public static final int UI_FOOTER_CALLBACK = 0;
 
@@ -31,7 +32,6 @@ public class DiscoverFragment extends Fragment {
     private LinearLayoutManager mManager;
 
     public DiscoverFragment() {
-        // Required empty public constructor
     }
 
     public Handler uiHandler = new Handler(new Handler.Callback() {
@@ -73,66 +73,67 @@ public class DiscoverFragment extends Fragment {
         mListView.setAdapter(mAdapter);
 
         initActions();
-
     }
 
     private void initActions() {
-        mSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                mAdapter.clearData();
-                List<DiscoverBean> mList = new ArrayList<>();
-                for (int i = 0; i < 10; i++) {
-                    mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), "" + i));
-                }
-                mAdapter.addData(mList);
-                mSwipe.setRefreshing(false);
-            }
-        });
-
-        mListView.addOnScrollListener(new OnScrollListener() {
-            int lastItem = 0;
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                lastItem = mManager.findLastVisibleItemPosition();
-            }
-
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-//                if (newState == RecyclerView.SCROLL_STATE_IDLE
-                  if (lastItem == mAdapter.getItemCount() - 1) {
-
-                    mAdapter.setFooterState(DiscoverAdapter.FOOTER_STATE_LOADING);
-
-                    Thread thread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            uiHandler.sendEmptyMessage(UI_FOOTER_CALLBACK);
-                        }
-                    });
-                    thread.start();
-
-                }
-            }
-        });
-
-        mAdapter.setCallback(new ListViewCallback<DiscoverBean>() {
-            @Override
-            public void OnItemClickListener(int position, DiscoverBean bean, int flag) {
-
-            }
-
-            @Override
-            public void OnItemLongClickListener(int position, DiscoverBean bean, int flag) {
-
-            }
-        });
+        mSwipe.setOnRefreshListener(swipeListener);
+        mListView.addOnScrollListener(listListener);
+        mAdapter.setCallback(listCallback);
     }
+
+    private SwipeRefreshLayout.OnRefreshListener swipeListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            mAdapter.clearData();
+            List<DiscoverBean> mList = new ArrayList<>();
+            for (int i = 0; i < 10; i++) {
+                mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), "" + i));
+            }
+            mAdapter.addData(mList);
+            mSwipe.setRefreshing(false);
+        }
+    };
+
+    private OnScrollListener listListener = new OnScrollListener() {
+        int lastItem = 0;
+
+        @Override
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            lastItem = mManager.findLastVisibleItemPosition();
+        }
+
+        @Override
+        public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            if (lastItem == mAdapter.getItemCount() - 1) {
+                mAdapter.setFooterState(DiscoverAdapter.FOOTER_STATE_LOADING);
+
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        uiHandler.sendEmptyMessage(UI_FOOTER_CALLBACK);
+                    }
+                });
+                thread.start();
+
+            }
+        }
+    };
+
+    private ListViewCallback<DiscoverBean> listCallback = new ListViewCallback<DiscoverBean>() {
+        @Override
+        public void OnItemClickListener(int position, DiscoverBean bean, int flag) {
+
+        }
+
+        @Override
+        public void OnItemLongClickListener(int position, DiscoverBean bean, int flag) {
+
+        }
+    };
 
 }
