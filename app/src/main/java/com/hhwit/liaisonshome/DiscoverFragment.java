@@ -2,6 +2,8 @@ package com.hhwit.liaisonshome;
 
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +23,7 @@ import static java.lang.Thread.sleep;
  * A simple {@link Fragment} subclass.
  */
 public class DiscoverFragment extends Fragment {
+    public static final int UI_FOOTER_CALLBACK = 0;
 
     private SwipeRefreshLayout mSwipe;
     private RecyclerView mListView;
@@ -31,6 +34,22 @@ public class DiscoverFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public Handler uiHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message message) {
+            switch (message.what) {
+                case UI_FOOTER_CALLBACK:
+                    mAdapter.setFooterState(DiscoverAdapter.FOOTER_STATE_GONE);
+                    List<DiscoverBean> mList = new ArrayList<>();
+                    for (int i = 0;i< 10; i++) {
+                        mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), "" + i));
+                    }
+                    mAdapter.addData(mList);
+                    break;
+            }
+            return false;
+        }
+    });
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -94,13 +113,7 @@ public class DiscoverFragment extends Fragment {
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-                            mAdapter.setFooterState(DiscoverAdapter.FOOTER_STATE_GONE);
-
-//                            List<DiscoverBean> mList = new ArrayList<>();
-//                            for (int i = 0;i< 10; i++) {
-//                                mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), "" + i));
-//                            }
-//                            mAdapter.addData(mList);
+                            uiHandler.sendEmptyMessage(UI_FOOTER_CALLBACK);
                         }
                     });
                     thread.start();
