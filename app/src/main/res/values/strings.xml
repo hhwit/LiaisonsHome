@@ -41,4 +41,6 @@
     <string name="contacts_i_found_him">I found him/her</string>
     <string name="contacts_he_found_me">He/She found me</string>
 
+    <string name="talks_format_date_no_year">d/M</string>
+
 </resources>

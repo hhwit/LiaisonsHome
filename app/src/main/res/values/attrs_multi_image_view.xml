@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="MultiImageView">
+        <attr name="multiDrawable1" format="color|reference" />
+        <attr name="multiDrawable2" format="color|reference" />
+        <attr name="multiDrawable3" format="color|reference" />
+        <attr name="multiDrawable4" format="color|reference" />
+    </declare-styleable>
+</resources>
