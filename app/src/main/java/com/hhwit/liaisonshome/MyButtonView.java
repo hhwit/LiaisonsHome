@@ -17,9 +17,9 @@ import android.view.View;
 
 
 public class MyButtonView extends View {
-    private int mBackgroundNormalColor = Color.WHITE;
-    private int mBackgroundPressedColor = Color.GRAY;
-    private int mBackgroundDisabledColor = Color.WHITE;
+    private int mBackgroundNormalColor = 0xFFFFFF;
+    private int mBackgroundPressedColor = 0xFFFFFF;
+    private int mBackgroundDisabledColor = 0xFFFFFF;
     private int mContentNormalColor = Color.WHITE;
     private int mContentPressedColor = Color.GRAY;
     private int mContentDisabledColor = Color.WHITE;
@@ -32,7 +32,7 @@ public class MyButtonView extends View {
     private float mTextHeight;
 
     private OnClickListener mListener;
-    private int mCurrentBackgroundColor;
+    private int mCurrentBackgroundColor = -2;
     private int mCurrentContentColor;
     private boolean isDisabled = false;
 
@@ -120,7 +120,6 @@ public class MyButtonView extends View {
 
         mCurrentBackgroundColor = mBackgroundNormalColor;
         mCurrentContentColor = mContentNormalColor;
-
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

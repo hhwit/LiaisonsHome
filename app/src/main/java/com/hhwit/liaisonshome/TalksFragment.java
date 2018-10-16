@@ -1,6 +1,7 @@
 package com.hhwit.liaisonshome;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -83,6 +84,7 @@ public class TalksFragment extends Fragment {
     private ListViewCallback<TalksBean> listCallback = new ListViewCallback<TalksBean>() {
         @Override
         public void OnItemClickListener(int position, TalksBean bean, int flag) {
+            startActivity(new Intent(getContext(), TalkActivity.class));
         }
 
         @Override

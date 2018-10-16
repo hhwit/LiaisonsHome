@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TalkActivity">
+
+    <RelativeLayout
+        android:id="@+id/talk_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionbar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorActionBar">
+
+        <com.hhwit.liaisonshome.MyButtonView
+            android:id="@+id/talk_back_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            app:buttonContentNormal="@color/colorPrimary"
+            app:buttonContentPressed="@color/colorPrimaryDark"
+            app:buttonImage="@drawable/ic_back_white_24dp" />
+
+        <TextView
+            android:id="@+id/talk_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/talk_back_button"
+            android:text="@string/app_name"
+            android:textColor="@color/colorActionBarText"
+            android:textSize="18sp" />
+
+        <com.hhwit.liaisonshome.MyButtonView
+            android:id="@+id/talk_person_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            app:buttonContentNormal="@color/colorPrimary"
+            app:buttonContentPressed="@color/colorPrimaryDark"
+            app:buttonImage="@drawable/ic_person_white_24dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/talk_input_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorNavigationBar">
+
+        <EditText
+            android:id="@+id/talk_input_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:maxLines="3"
+            android:background="@drawable/te_corner_semi_solid"
+            android:inputType="textMultiLine"
+            android:textColor="@color/colorActionBar"
+            android:textSize="18sp" />
+
+        <com.hhwit.liaisonshome.MyButtonView
+            android:id="@+id/talk_send_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            app:buttonContentNormal="@color/colorLiaisonGray"
+            app:buttonContentPressed="@color/colorPrimaryDark"
+            app:buttonImage="@drawable/ic_send_24dp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/talk_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_above="@+id/talk_input_bar"
+        android:layout_below="@+id/talk_action_bar" />
+
+</RelativeLayout>
