@@ -84,7 +84,7 @@ public class TalksFragment extends Fragment {
     private ListViewCallback<TalksBean> listCallback = new ListViewCallback<TalksBean>() {
         @Override
         public void OnItemClickListener(int position, TalksBean bean, int flag) {
-            startActivity(new Intent(getContext(), TalkActivity.class));
+            startActivity(new Intent(getContext(), ChatActivity.class));
         }
 
         @Override

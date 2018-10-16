@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".TalkActivity"
+            android:name=".ChatActivity"
             android:label="@string/title_activity_register"
             android:windowSoftInputMode="stateHidden">
         </activity>

@@ -8,12 +8,12 @@ import android.os.Bundle;
  * Email: hhwit@126.com
  */
 
-public class TalkActivity extends Activity {
+public class ChatActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_talk);
+        setContentView(R.layout.activity_chat);
 
     }
 

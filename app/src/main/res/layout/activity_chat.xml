@@ -5,17 +5,17 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TalkActivity">
+    tools:context=".ChatActivity">
 
     <RelativeLayout
-        android:id="@+id/talk_action_bar"
+        android:id="@+id/chat_action_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/actionbar_height"
         android:layout_alignParentTop="true"
         android:background="@color/colorActionBar">
 
         <com.hhwit.liaisonshome.MyButtonView
-            android:id="@+id/talk_back_button"
+            android:id="@+id/chat_back_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:padding="8dp"
@@ -27,18 +27,18 @@
             app:buttonImage="@drawable/ic_back_white_24dp" />
 
         <TextView
-            android:id="@+id/talk_title"
+            android:id="@+id/chat_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/talk_back_button"
+            android:layout_toRightOf="@id/chat_back_button"
             android:text="@string/app_name"
             android:textColor="@color/colorActionBarText"
             android:textSize="18sp" />
 
         <com.hhwit.liaisonshome.MyButtonView
-            android:id="@+id/talk_person_button"
+            android:id="@+id/chat_person_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:padding="8dp"
@@ -51,14 +51,14 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/talk_input_bar"
+        android:id="@+id/chat_input_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/colorNavigationBar">
 
         <EditText
-            android:id="@+id/talk_input_text"
+            android:id="@+id/chat_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -72,7 +72,7 @@
             android:textSize="18sp" />
 
         <com.hhwit.liaisonshome.MyButtonView
-            android:id="@+id/talk_send_button"
+            android:id="@+id/chat_send_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:padding="10dp"
@@ -85,11 +85,11 @@
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/talk_list"
+        android:id="@+id/chat_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        android:layout_above="@+id/talk_input_bar"
-        android:layout_below="@+id/talk_action_bar" />
+        android:layout_above="@+id/chat_input_bar"
+        android:layout_below="@+id/chat_action_bar" />
 
 </RelativeLayout>
