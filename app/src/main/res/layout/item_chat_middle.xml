@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/tv_corner_chat_middle"
         android:layout_gravity="center"
-        android:textColor="@color/colorActionBar"
+        android:textColor="@color/colorLiaisonGray"
         android:textSize="14sp" />
 
 </LinearLayout>

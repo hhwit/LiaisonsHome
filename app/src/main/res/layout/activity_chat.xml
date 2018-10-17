@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorNavigationBar">
+        android:background="@color/colorLiaisonLightGray0">
 
         <EditText
             android:id="@+id/chat_input_text"
@@ -88,7 +88,7 @@
         android:id="@+id/chat_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorLiaisonLightGray0"
         android:layout_above="@+id/chat_input_bar"
         android:layout_below="@+id/chat_action_bar" />
 
