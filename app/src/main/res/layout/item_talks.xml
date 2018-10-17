@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="3dp"
@@ -24,23 +25,21 @@
                 android:id="@+id/item_talks_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="8dp"
-                android:layout_alignParentLeft="true"
                 android:layout_marginLeft="5dp"
+                android:paddingTop="6dp"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp" />
 
             <com.hhwit.liaisonshome.MultiImageView
                 android:id="@+id/item_talks_type"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_alignParentBottom="false"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignBottom="@+id/item_talks_description"
                 android:layout_alignParentRight="true"
                 app:multiDrawable1="@drawable/ic_arrow_forward_24dp"
                 app:multiDrawable2="@drawable/ic_arrow_forward2_24dp"
                 app:multiDrawable3="@drawable/ic_arrow_back_24dp"
                 app:multiDrawable4="@drawable/ic_arrow_back2_24dp" />
-
         </RelativeLayout>
 
         <TextView
@@ -60,6 +59,7 @@
                 android:id="@+id/item_talks_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_alignParentLeft="true"
                 android:layout_toLeftOf="@+id/item_talks_date"
                 android:ellipsize="end"
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
                 android:textColor="@color/colorLiaisonGray"
                 android:textSize="16sp" />
 
