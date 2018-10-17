@@ -42,7 +42,7 @@ public class DiscoverFragment extends Fragment {
                     mAdapter.setFooterState(DiscoverAdapter.FOOTER_STATE_GONE);
                     List<DiscoverBean> mList = new ArrayList<>();
                     for (int i = 0;i< 10; i++) {
-                        mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), "" + i));
+                        mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), null));
                     }
                     mAdapter.addData(mList);
                     break;
@@ -87,7 +87,7 @@ public class DiscoverFragment extends Fragment {
             mAdapter.clearData();
             List<DiscoverBean> mList = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
-                mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), "" + i));
+                mList.add(new DiscoverBean("China's foreign trade registered steady growth in the first eight months of this year despite higher tariffs imposed by the United States. " + Math.random(), null));
             }
             mAdapter.addData(mList);
             mSwipe.setRefreshing(false);

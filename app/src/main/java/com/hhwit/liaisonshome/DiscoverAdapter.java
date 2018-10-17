@@ -76,6 +76,8 @@ public class DiscoverAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (bean.getDescription() != null) {
             ((DiscoverViewHolder) holder).description.setText(bean.getDescription());
             ((DiscoverViewHolder) holder).description.setVisibility(View.VISIBLE);
+        } else {
+            ((DiscoverViewHolder) holder).description.setVisibility(View.GONE);
         }
         if (bean.getIdentity() != null) {
             ((DiscoverViewHolder) holder).identity.setText(bean.getIdentity());
