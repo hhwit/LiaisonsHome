@@ -6,10 +6,10 @@
         android:color="@color/colorLiaisonGray" />
 
     <corners
-        android:bottomLeftRadius="10px"
-        android:bottomRightRadius="10px"
-        android:topLeftRadius="10px"
-        android:topRightRadius="10px" />
+        android:bottomLeftRadius="5dp"
+        android:bottomRightRadius="5dp"
+        android:topLeftRadius="5dp"
+        android:topRightRadius="5dp" />
 
     <padding
         android:bottom="5dp"
